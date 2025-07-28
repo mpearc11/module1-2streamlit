@@ -6,6 +6,8 @@ from Bio import Blast
 
 Blast.email = 'mpearc11@jhu.edu'
 
+st.title('Module 1-2')
+
 uploaded_file = st.file_uploader("",type='fasta')
 
 if uploaded_file is not None:
