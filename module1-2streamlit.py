@@ -20,8 +20,8 @@ if uploaded_file:
     result_stream = open('myblast.xml', 'rb')
     blast_record = Blast.read(result_stream)
 
-hit = blast_record[0]
-alignment = hit[0]
+    hit = blast_record[0]
+    alignment = hit[0]
 
 @st.fragment()
 def file_download():
