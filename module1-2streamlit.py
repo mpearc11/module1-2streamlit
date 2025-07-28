@@ -13,11 +13,12 @@ if st.button('run blast'):
     result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
     st.write('blast finished!')
 
-with open('myblast.xml', 'wb') as out_stream:
-    out_stream.write(result_stream.read())
-result_stream.close()
-result_stream = open('myblast.xml', 'rb')
-blast_record = Blast.read(result_stream)
+if uploaded_file:
+    with open('myblast.xml', 'wb') as out_stream:
+        out_stream.write(result_stream.read())
+    result_stream.close()
+    result_stream = open('myblast.xml', 'rb')
+    blast_record = Blast.read(result_stream)
 
 hit = blast_record[0]
 alignment = hit[0]
