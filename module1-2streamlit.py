@@ -17,12 +17,10 @@ else:
 
 if st.button('run blast'):
     target_nt_fasta = uploaded_file.read()
-    active = 1
-    while active == 1:
-            st.write('blast running...')
-            result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
-            active = 0
-    st.write('blast finished!')
+    with st.empty():
+        st.write('blast running...')
+        result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
+        st.write('blast finished!')
 
     with open('myblast.xml', 'wb') as out_stream:
         out_stream.write(result_stream.read())
