@@ -4,9 +4,9 @@ from Bio import Blast
 #Blast.tool
 #'biopython'
 
-Blast.email = 'mpearc11@jhu.edu'
-
 st.title('Module 1-2')
+
+Blast.email = st.text_input('provide your jhu email')
 
 uploaded_file = st.file_uploader("",type='fasta')
 
@@ -16,9 +16,12 @@ else:
     st.info("Please upload your target FASTA file")
 
 if st.button('run blast'):
-    st.write('blast running...')
     target_nt_fasta = uploaded_file.read()
-    result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
+    active = 1
+    while active = 1:
+            st.write('blast running...')
+            result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
+            active = 0
     st.write('blast finished!')
 
     with open('myblast.xml', 'wb') as out_stream:
