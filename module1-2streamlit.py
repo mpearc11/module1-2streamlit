@@ -18,7 +18,7 @@ else:
 if st.button('run blast'):
     target_nt_fasta = uploaded_file.read()
     active = 1
-    while active = 1:
+    while active == 1:
             st.write('blast running...')
             result_stream = Blast.qblast('blastn', 'nt', target_nt_fasta)
             active = 0
