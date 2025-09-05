@@ -4,9 +4,11 @@ from Bio import Blast
 #Blast.tool
 #'biopython'
 
-st.title('Module 1-2')
+st.title('Automated Python Search App – Nucleotide BLAST')
 
-Blast.email = st.text_input('provide your jhu email')
+#Blast.email = st.text_input('provide your jhu email')
+
+st.header('ubmit Query for BLASTn – Nucleotide Search')
 
 uploaded_file = st.file_uploader("",type='fasta')
 
@@ -32,12 +34,12 @@ if st.button('run blast'):
     alignment = hit[0]
     
     @st.fragment()
-    def file_download():
+    def alignment_download():
         st.download_button(
             label="Download Alignment",
             data=str(alignment),
             file_name='alignment.txt')
-    file_download()
+    alignment_download()
     
     st.code(hit)
     
@@ -47,3 +49,11 @@ if st.button('run blast'):
         st.write("HIT" + str(num))
         st.write(i[0])
         num = num +1
+
+     @st.fragment()
+        def hit_download():
+            st.download_button(
+                label='Download Top 10 Hits',
+                data=str(blast_record[:10]),
+                file_name='top10hits.txt')
+        hit_download()
