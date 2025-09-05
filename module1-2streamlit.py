@@ -53,9 +53,5 @@ if st.button('run blast'):
         num = num +1
 
     @st.fragment()
-    def hit_download():
-        st.download_button(
-            label='Download Top 10 Hits',
-            data=f,
-            file_name='top10hits.txt')
-    hit_download()
+    with open('top10hits.txt') as f:
+        st.download_button('Download Top 10 Hits', f)
