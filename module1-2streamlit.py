@@ -8,7 +8,7 @@ st.title('Automated Python Search App – Nucleotide BLAST')
 
 #Blast.email = st.text_input('provide your jhu email')
 
-st.header('ubmit Query for BLASTn – Nucleotide Search')
+st.header('Submit Query for BLASTn – Nucleotide Search')
 
 uploaded_file = st.file_uploader("",type='fasta')
 
