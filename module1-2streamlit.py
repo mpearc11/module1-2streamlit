@@ -49,7 +49,7 @@ if st.button('run blast'):
         st.write("HIT" + str(num))
         st.write(i[0])
         with open("top10hits.txt", "a") as f:
-            f.write(st.write(i[0]))
+            f.write(str(i[0]))
         num = num +1
 
     @st.fragment()
