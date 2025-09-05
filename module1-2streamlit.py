@@ -50,10 +50,10 @@ if st.button('run blast'):
         st.write(i[0])
         num = num +1
 
-     @st.fragment()
-        def hit_download():
-            st.download_button(
-                label='Download Top 10 Hits',
-                data=str(blast_record[:10]),
-                file_name='top10hits.txt')
-        hit_download()
+    @st.fragment()
+    def hit_download():
+        st.download_button(
+            label='Download Top 10 Hits',
+            data=str(blast_record[:10]),
+            file_name='top10hits.txt')
+    hit_download()
