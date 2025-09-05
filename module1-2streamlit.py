@@ -53,5 +53,5 @@ if st.button('run blast'):
         num = num +1
 
     @st.fragment()
-    with open('top10hits.txt') as f:
-        st.download_button('Download Top 10 Hits', f)
+        with open('top10hits.txt') as f:
+            st.download_button('Download Top 10 Hits', f)
