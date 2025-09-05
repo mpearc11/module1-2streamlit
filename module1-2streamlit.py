@@ -48,12 +48,14 @@ if st.button('run blast'):
     for i in blast_record[:10]:
         st.write("HIT" + str(num))
         st.write(i[0])
+        with open("top10hits.txt", "a") as f:
+            f.write(i[0])
         num = num +1
 
     @st.fragment()
     def hit_download():
         st.download_button(
             label='Download Top 10 Hits',
-            data=str(blast_record[:10]),
+            data=f,
             file_name='top10hits.txt')
     hit_download()
