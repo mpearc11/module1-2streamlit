@@ -32,14 +32,6 @@ if st.button('run blast'):
 
     hit = blast_record[0]
     alignment = hit[0]
-    
-    @st.fragment()
-    def alignment_download():
-        st.download_button(
-            label="Download Alignment",
-            data=str(format(alignment, 'fasta')),
-            file_name='alignment.txt')
-    alignment_download()
 
     st.subheader('Top Hit')
     st.code(hit)
@@ -47,6 +39,14 @@ if st.button('run blast'):
     st.code(hit.target)
     st.subheader('Target Accession Number')
     st.code(hit.target.name)
+
+    @st.fragment()
+    def alignment_download():
+        st.download_button(
+            label="Download Alignment",
+            data=str(format(alignment, 'phylip')),
+            file_name='alignment.txt')
+    alignment_download()
     
     num = 1
     
