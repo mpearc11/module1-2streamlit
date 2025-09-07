@@ -40,10 +40,13 @@ if st.button('run blast'):
             data=str(alignment),
             file_name='alignment.txt')
     alignment_download()
-    
+
+    st.subheader('Top Hit')
     st.code(hit)
-    st.code('targets = ' + hit.target)
-    st.code('accession number = ' + hit.targets[0].name)
+    st.subheader('Top Hit Target')
+    st.code(hit.target)
+    st.subheader('Target Accession Number')
+    st.code(hit.target[0].name)
     
     num = 1
     
