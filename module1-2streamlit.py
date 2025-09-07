@@ -46,7 +46,7 @@ if st.button('run blast'):
     st.subheader('Top Hit Target')
     st.code(hit.target)
     st.subheader('Target Accession Number')
-    st.code(hit.target[0].name)
+    st.code(hit.target.name)
     
     num = 1
     
