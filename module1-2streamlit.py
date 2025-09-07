@@ -44,7 +44,7 @@ if st.button('run blast'):
     def alignment_download():
         st.download_button(
             label="Download Alignment",
-            data=str(format(alignment, 'phylip')),
+            data=str(alignment),
             file_name='alignment.txt')
     alignment_download()
     
