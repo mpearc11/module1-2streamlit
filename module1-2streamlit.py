@@ -42,6 +42,7 @@ if st.button('run blast'):
     alignment_download()
     
     st.code(hit)
+    st.code('accession number = ' + hit.name)
     
     num = 1
     
